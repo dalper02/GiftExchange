@@ -1,0 +1,7 @@
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\bin\Release\GiftExchange.LogicLayer.dll
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\bin\Release\GiftExchange.LogicLayer.pdb
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\bin\Release\GiftExchange.DTOs.dll
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\bin\Release\GiftExchange.DTOs.pdb
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\obj\Release\GiftExchange.LogicLayer.csprojResolveAssemblyReference.cache
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\obj\Release\GiftExchange.LogicLayer.dll
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.LogicLayer\obj\Release\GiftExchange.LogicLayer.pdb

@@ -1,0 +1,5 @@
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftExchange.DTOs.dll
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftExchange.DTOs.pdb
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.csprojResolveAssemblyReference.cache
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.dll
+C:\Users\dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.pdb
