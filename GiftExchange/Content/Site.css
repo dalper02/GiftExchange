@@ -1,0 +1,82 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Clickable On Hover Affects */
+.red-click:hover {
+    color: red;
+}
+
+
+/* AngularJS CSS */
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+
+
+
+/* Animations */
+
+.fade {
+    display: block!important;
+}
+
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
