@@ -1,5 +1,6 @@
-﻿using GiftExchange.DTOs.ProductDTOs;
-//using GiftExchange.DTOs;
+﻿using AutoMapper;
+using GiftExchange.DataLayer.ExchangeRepo;
+using GiftExchange.DTOs.ProductDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,14 @@ namespace GiftExchange.LogicLayer.LogicManager
     public class LogicManager
     {
 
+        private ExchangeRepo _exchangeRepo;
         List<ProductDTO> products;
 
         public LogicManager()
         {
+
+            _exchangeRepo = new ExchangeRepo();
+
             products = new List<ProductDTO>
             {
                new ProductDTO("1AX34563B", "GI Joe Kung Foo Grip"),
@@ -38,10 +43,32 @@ namespace GiftExchange.LogicLayer.LogicManager
         }
 
 
-        public string CreateNewReturn(List<ProductDTO> ReturnItems)
+        //public string CreateNewReturn(List<ProductDTO> ReturnItems)        
+        public ReturnDTO CreateNewReturn(List<ProductDTO> productDTOList)
+        {
+            var RetDTO = _exchangeRepo.SaveReturn(productDTOList);
+            return RetDTO;
+        }
+
+        public IEnumerable<ReturnDTO> GetReturns()
         {
 
-            return "";
+            var returns = _exchangeRepo.GetReturns();
+            var returnsDTOList = Mapper.Map<IEnumerable<ReturnDTO>>(returns);
+
+            return returnsDTOList;
+
+        }
+
+
+        public ReturnDTO GetReturnRequest(Guid? returnId)
+        {
+
+            var ReturnRequest = _exchangeRepo.GetReturnRequest(returnId);
+            var returnDTO = Mapper.Map<ReturnDTO>(ReturnRequest);
+
+            return returnDTO;
+
         }
 
 

@@ -13,6 +13,7 @@ namespace GiftExchange
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.js",
                         "~/Scripts/angular-animate.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

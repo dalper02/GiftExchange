@@ -6,17 +6,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiftExchange.DTOs.ProductDTOs;
+using AutoMapper;
 
 namespace GiftExchange.Controllers
 {
     public class MyExchangeController : Controller
     {
         LogicManager _logicManager;
-        List<Product> ProdList;
+        List<ProductViewModel> ProdList;
 
         public MyExchangeController()
         {
             _logicManager = new LogicManager();
+            //_logicManager.GetReturns();
         }
         
         // GET: MyExchange
@@ -37,11 +39,16 @@ namespace GiftExchange.Controllers
         }
 
 
-        public ActionResult SaveReturns(List<Product> ReturnItems)
+        public ActionResult SaveReturns(List<ProductViewModel> ReturnItems)
         {
 
+            List<ProductDTO> productDTOList;
+            productDTOList = Mapper.Map<List<ProductDTO>>(ReturnItems);
+            var Return = _logicManager.CreateNewReturn(productDTOList);
 
-            return Json(new { success = true, ReturnId = "1" });
+            var ReturnVM = Mapper.Map<ReturnViewModel>(Return);
+
+            return Json(ReturnVM);
         }
 
     }

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GiftExchange.Models.ReturnViewModel>
+
+@{
+    ViewBag.Title = "ReturnRequests";
+}
+
+<h2>Return Requests</h2>
+
+<div ng-app="VendorReturnApp" ng-controller="VendorReturnController" style="padding-top:50px;">
+
+    <div ng-view></div>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/Javascript/VendorReturnsApp/VendorReturnApp.js"></script>
+}
+
+

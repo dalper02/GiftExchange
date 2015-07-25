@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -153,6 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -162,13 +169,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyExchangeController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\ReturnItemViewModel.cs" />
+    <Compile Include="Models\ReturnOfferItemViewModel.cs" />
+    <Compile Include="Models\ReturnOfferViewModel.cs" />
+    <Compile Include="Models\ReturnViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -179,7 +191,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Javascript\GiftExchangeApp\Directives\ComfirmReturnDirective.js" />
+    <Content Include="Javascript\GiftExchangeApp\Directives\CreateReturnDirective.js" />
     <Content Include="Javascript\GiftExchangeApp\GiftExchangeApp.js" />
+    <Content Include="Javascript\GiftExchangeApp\Templates\ConfirmReturn.html" />
+    <Content Include="Javascript\GiftExchangeApp\Templates\CreateReturn.html" />
+    <Content Include="Javascript\VendorReturnsApp\Templates\ReturnsReport.html" />
+    <Content Include="Javascript\VendorReturnsApp\Templates\ViewReturn.html" />
+    <Content Include="Javascript\VendorReturnsApp\VendorReturnApp.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -1013,6 +1032,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\MyExchange\Index.cshtml" />
+    <Content Include="Views\Vendor\ReturnRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1025,6 +1045,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GiftExchange.DataLayer\GiftExchange.DataLayer.csproj">
+      <Project>{1a4812f6-be01-448e-8103-2c47cad40904}</Project>
+      <Name>GiftExchange.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GiftExchange.DTOs\GiftExchange.DTOs.csproj">
       <Project>{cffe881e-15a6-4115-a58b-15d1be681554}</Project>
       <Name>GiftExchange.DTOs</Name>

@@ -6,9 +6,9 @@ giftExchangeApp.controller('giftExchangeController',
 function ($http, $scope, $rootScope, $filter) {
 
     $scope.NewUPC = '';
-
     $scope.productReturns = [];
 
+    $scope.confirmationPage = false;
 
 
     $scope.RemoveReturn = function (productReturn) {
@@ -61,6 +61,9 @@ function ($http, $scope, $rootScope, $filter) {
         }).success(function (data, status, headers, config) {
             //var blob = new Blob([data], { type: "application/pdf" });
             //saveAs(blob, 'Resume.pdf');
+            console.log(data);
+            $scope.Return = data;
+            $scope.confirmationPage = true;
 
         }).error(function (data, status, headers, config) {
             //upload failed

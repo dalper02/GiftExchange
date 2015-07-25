@@ -1,0 +1,49 @@
+﻿<div style="min-height:100px;">
+    <h2>New Return Request Created</h2>
+</div>
+
+<div class="row form-group" style="display: block !important">
+
+    <table class="table table-condensed"  style="display: grid !important">
+        <tr>
+            <td>Tran Num</td>
+            <td>{{ Return.id }}</td>
+        </tr>
+        <tr>
+            <td>Created</td>
+            <td>{{ Return.CreateDate }}</td>
+        </tr>
+        <tr>
+            <td>Altered</td>
+            <td>{{ Return.AlterDate }}</td>
+        </tr>
+        <!--<tr>
+            <td>Created</td>
+            <td>{{ Return.CreateDate }}</td>
+        </tr>-->
+    </table>
+</div>
+
+<div style="height: 60px;"></div>
+
+
+<div class="row">
+    <table class="table table-striped" style="width: 50%" sstyle="border: 1px solid lightgray">
+        <tr>
+            <th>SKU / UPC</th>
+            <th>Description</th>
+        </tr>
+        <tr class="animate-repeat" ng-repeat="ReturnItem in Return.ReturnItems">
+
+            <td sclass="col-sm-1">
+                {{ ReturnItem.UPC }}
+            </td>
+            <td sclass="col-sm-3">
+                {{ ReturnItem.description }}
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>

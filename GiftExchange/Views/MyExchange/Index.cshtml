@@ -4,49 +4,9 @@
 
 <div ng-app="giftExchangeApp" ng-controller="giftExchangeController" style="padding-top:50px;">
 
+    <div data-create-return ng-hide="confirmationPage==true"></div>
+    <div data-confirm-return ng-show="confirmationPage==true"></div>
 
-
-    <div style="min-height:100px;">
-        <h2>Create Return Request:</h2>
-    </div>
-
-    <div class="row form-group">
-        <div class="col-sm-3">
-            <input class="form-control" placeholder="Enter UPC or SKU" ng-model="NewUPC" />
-        </div>
-        <div class="col-sm-1">
-            <a class="btn btn-success" ng-click="AddUPC()">Find</a>
-        </div>
-    </div>
-
-    <div style="height: 60px;"></div>
-
-
-    <div class="row" ng-show="productReturns.length > 0">
-        <table class="table table-striped" style="width: 50%" sstyle="border: 1px solid lightgray">
-            <tr>
-                <th></th>
-                <th>SKU / UPC</th>
-                <th>Description</th>
-            </tr>
-            <tr class="animate-repeat" ng-repeat="productReturn in productReturns">
-                <td>
-                    <i class="glyphicon glyphicon-trash red-click" ng-click="RemoveReturn(productReturn)"></i>
-                </td>
-
-                <td sclass="col-sm-1">
-                    {{ productReturn.UPC }}
-                </td>
-                <td sclass="col-sm-3">
-                    {{ productReturn.description }}
-                </td>
-
-            </tr>
-
-        </table>
-
-        <a class="btn btn-primary" ng-click="SaveReturns()">Finished</a>
-    </div>
 
 
 
@@ -58,4 +18,6 @@
 
 @section Scripts {
     <script src="~/Javascript/GiftExchangeApp/GiftExchangeApp.js"></script>
+    <script src="~/Javascript/GiftExchangeApp/Directives/CreateReturnDirective.js"></script>
+    <script src="~/Javascript/GiftExchangeApp/Directives/ComfirmReturnDirective.js"></script>
 }

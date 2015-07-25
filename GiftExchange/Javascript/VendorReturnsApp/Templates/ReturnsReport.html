@@ -1,0 +1,13 @@
+﻿<div class="row" ng-repeat="ReturnRequest in ReturnRequests | orderBy:$index:reverse track by $index">
+
+    <div class="col-sm-4">
+        <b><a href="#/view/{{ ReturnRequest.id }}">{{ ReturnRequest.id }}</a></b>
+    </div>
+    <div class="col-sm-3" style="vertical-align: bottom">
+        <b>Created:</b> {{ ReturnRequest.CreateDate }}
+    </div>
+    <div class="col-sm-3">
+        <b>Altered:</b> {{ ReturnRequest.AlterDate }}
+    </div>
+    <div class="col-sm-1"> {{ $index }} {{ $id }}</div>
+</div>

@@ -18,6 +18,8 @@ namespace GiftExchange.DTOs.ProductDTOs
             description = pDescription;
         }
 
+        public int id { get; set; }
+        public int Quantity { get; set; }
         public string UPC { get; set; }
         public string description { get; set; }
     }

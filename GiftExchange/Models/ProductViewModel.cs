@@ -5,18 +5,21 @@ using System.Web;
 
 namespace GiftExchange.Models
 {
-    public class Product
+    public class ProductViewModel
     {
 
-        public Product()
+        public ProductViewModel()
         {
         }
 
-        public Product(string pUPC, string pDescription)
+        public ProductViewModel(string pUPC, string pDescription)
         {
             UPC = pUPC;
             description = pDescription;
         }
+
+        public int id { get; set; }
+        public int Quantity { get; set; }
         public string UPC { get; set; }
         public string description { get; set; }
     }

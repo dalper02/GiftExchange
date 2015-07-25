@@ -1,0 +1,44 @@
+﻿
+<div class="row">
+    <b><i class="glyphicon glyphicon-arrow-left"></i><a href="#/"> Back to Returns</a></b>
+</div>
+
+<div class="row">
+
+
+    <h4>View Return {{ returnid }}</h4>
+
+    <table class="table table-striped" style="width: 50%" sstyle="border: 1px solid lightgray">
+        <tr>
+            <th>Accept</th>
+            <th>SKU / UPC</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        <tr class="animate-repeat" ng-repeat="returnItem in ReturnRequest.ReturnItems">
+            <td>
+
+<!--                <i class="glyphicon glyphicon-trash red-click" ng-click="RemoveReturn(productReturn)"></i>-->
+                <input type="checkbox" ng-model="returnItem.isOffered" title="Accept Product for Return"> 
+
+            </td>
+
+            <td sclass="col-sm-1">
+                {{ returnItem.UPC }}
+            </td>
+            <td sclass="col-sm-3">
+                {{ returnItem.description }}
+            </td>
+            <td sclass="col-sm-3">
+                <div class="left-inner-addon">
+                    <span>$</span>
+                    <input class="form-control" placeholder="0.00" />
+                </div>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <a class="btn btn-primary" ng-click="CreateNewReturnOffer(ReturnRequest)">Complete Offer</a>
+</div>
