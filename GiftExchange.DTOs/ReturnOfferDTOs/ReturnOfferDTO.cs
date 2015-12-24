@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GiftExchange.Models
+namespace GiftExchange.DTOs.ReturnOfferDTOs
 {
-    public class ReturnOfferViewModel
+    public class ReturnOfferDTO
     {
         public Guid? id { get; set; }
         public Guid? ReturnId { get; set; }
@@ -14,6 +15,6 @@ namespace GiftExchange.Models
         public string CreateDate { get; set; }
         public string AlterDate { get; set; }
 
-        public virtual IEnumerable<ReturnOfferItemViewModel> ReturnOfferItems { get; set; }
+        public virtual ICollection<ReturnOfferItemDTO> ReturnOfferItems { get; set; }
     }
 }

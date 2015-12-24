@@ -6,7 +6,7 @@ VendorReturnApp.config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: '/Javascript/VendorReturnsApp/Templates/ReturnsReport.html',
-                //controller: 'ViewController'
+                controller: 'ViewController'
             }).
             when('/view/:returnid', {
                 templateUrl: '/Javascript/VendorReturnsApp/Templates/ViewReturn.html',
@@ -69,11 +69,38 @@ function ($http, $scope, $routeParams, $filter) {
         //upload failed
     });
 
+    $scope.goto = function(location)
+    {
+        alert('hello');
+        //window.location.replace(location);
+    }
 
     $scope.CreateNewReturnOffer = function (ReturnRequest)
     {
+        console.log('starting');
+
+        //$http({
+        //    url: '/api/getbook',
+        //    method: "POST"
+        //    //responseType: 'arraybuffer'
+        //}).success(function (data, status, headers, config) {
+        //    //var blob = new Blob([data], { type: "application/pdf" });
+        //    //saveAs(blob, 'Resume.pdf');
+        //    console.log('success');
+        //    console.log(data);
+        //    $scope.Return = data;
+        //    $scope.confirmationPage = true;
+
+        //}).error(function (data, status, headers, config) {
+        //    console.log('failure');
+        //    console.log(status);
+        //    //console.log(data);
+        //    //upload failed
+        //});
+
+
         $http({
-            url: '/Vendor/CreateReturnOffer',
+            url: '/Vendor/SaveReturnOffer',
             method: "POST",
             data: ReturnRequest, //this is your json data string
             headers: {

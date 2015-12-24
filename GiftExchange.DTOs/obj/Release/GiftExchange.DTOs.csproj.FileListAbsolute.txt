@@ -2,3 +2,7 @@ C:\Users\Dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftEx
 C:\Users\Dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftExchange.DTOs.pdb
 C:\Users\Dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.dll
 C:\Users\Dave\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.pdb
+C:\Users\DaveA\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftExchange.DTOs.dll
+C:\Users\DaveA\Documents\GitHub\GiftExchange\GiftExchange.DTOs\bin\Release\GiftExchange.DTOs.pdb
+C:\Users\DaveA\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.dll
+C:\Users\DaveA\Documents\GitHub\GiftExchange\GiftExchange.DTOs\obj\Release\GiftExchange.DTOs.pdb

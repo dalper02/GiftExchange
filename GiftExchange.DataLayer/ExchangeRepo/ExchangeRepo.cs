@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GiftExchange.DataLayer.ExchangeContext;
 using GiftExchange.DTOs.ProductDTOs;
+using GiftExchange.DTOs.ReturnOfferDTOs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,7 +23,7 @@ namespace GiftExchange.DataLayer.ExchangeRepo
 
         public IEnumerable<Return> GetReturns()
         {
-            var returnsList = _eCtxt.Return.ToList();
+            var returnsList = _eCtxt.Return.Include(r => r.ReturnItems).ToList();
             return returnsList;
         }
 
@@ -55,6 +56,27 @@ namespace GiftExchange.DataLayer.ExchangeRepo
 
             return retDTO;
 
+        }
+
+
+        public ReturnOfferDTO SaveNewReturnOffer(ReturnOfferDTO returnOfferDTO)
+        {
+
+            var newReturnOffer = Mapper.Map<ReturnOffer>(returnOfferDTO);
+            ReturnOffer ReturnOffer2 = Mapper.Map<ReturnOffer>(returnOfferDTO);
+
+            _eCtxt.ReturnOffer.Add(newReturnOffer);
+
+            foreach (var ReturnItem in newReturnOffer.ReturnOfferItems)
+            {
+                _eCtxt.Entry(ReturnItem).State = EntityState.Added;
+            }
+
+            _eCtxt.SaveChanges();
+
+            ReturnOfferDTO sendback = Mapper.Map<ReturnOfferDTO>(newReturnOffer);
+
+            return sendback;
         }
 
     }

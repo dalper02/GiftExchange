@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GiftExchange.DataLayer.ExchangeRepo;
 using GiftExchange.DTOs.ProductDTOs;
+using GiftExchange.DTOs.ReturnOfferDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,11 @@ namespace GiftExchange.LogicLayer.LogicManager
 
         }
 
+        public ReturnOfferDTO CreateNewReturnOffer(ReturnOfferDTO returnOffer)
+        {
+            var RetDTO = _exchangeRepo.SaveNewReturnOffer(returnOffer);
+            return RetDTO;
+        }
 
     }
 }

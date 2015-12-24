@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GiftExchange.DTOs.ReturnOfferDTOs;
 using GiftExchange.LogicLayer.LogicManager;
 using GiftExchange.Models;
 using System;
@@ -11,6 +12,11 @@ namespace GiftExchange.Controllers
 {
     public class VendorController : Controller
     {
+        public class Query
+        {
+            public int sId { get; set; }
+        }
+
         LogicManager _logicManager;
 
         public VendorController()
@@ -51,12 +57,26 @@ namespace GiftExchange.Controllers
             return Json(ReturnVM, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult CreateReturnOffer(ReturnOfferViewModel newReturnOffer)
+        public ActionResult SaveReturnOffer(ReturnOfferViewModel ReturnOffer)
         {
             //var returnRequest = _logicManager.GetReturnRequest(id);
-            //var ReturnVM = Mapper.Map<ReturnViewModel>(returnRequest);
+            var newReturnOfferDTO = Mapper.Map<ReturnOfferDTO>(ReturnOffer);
+            //var newReturnOfferDTO = new ReturnOfferDTO()
+            //{
+            //    id = ReturnOffer.id,
+            //    VendorUserID = ReturnOffer.VendorUserID,
+            //    ReturnOfferItems = ReturnOffer.ReturnOfferItems.Select(r=> new ReturnOfferItemDTO() 
+            //    { 
+            //        ReturnItemId = r.ReturnItemId,
+            //        isOffered = r.isOffered,
+            //        price = r.price,
 
-            return Json(newReturnOffer, JsonRequestBehavior.AllowGet);
+            //    })
+                
+            //};
+            var updatedReturnOffer = _logicManager.CreateNewReturnOffer(newReturnOfferDTO);
+
+            return Json(ReturnOffer, JsonRequestBehavior.AllowGet);
         }
 
     }

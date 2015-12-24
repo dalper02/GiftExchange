@@ -59,6 +59,8 @@
     <Compile Include="ExchangeContext\ExchangeContext.cs" />
     <Compile Include="ExchangeContext\Return.cs" />
     <Compile Include="ExchangeContext\ReturnItem.cs" />
+    <Compile Include="ExchangeContext\ReturnOffer.cs" />
+    <Compile Include="ExchangeContext\ReturnOfferItems.cs" />
     <Compile Include="ExchangeRepo\ExchangeRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

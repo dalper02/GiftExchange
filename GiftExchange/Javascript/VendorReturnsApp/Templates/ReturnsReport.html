@@ -1,13 +1,27 @@
-﻿<div class="row" ng-repeat="ReturnRequest in ReturnRequests | orderBy:$index:reverse track by $index">
+﻿<table class="table table-striped" style="width: 90%" sstyle="border: 1px solid lightgray">
 
-    <div class="col-sm-4">
-        <b><a href="#/view/{{ ReturnRequest.id }}">{{ ReturnRequest.id }}</a></b>
-    </div>
-    <div class="col-sm-3" style="vertical-align: bottom">
-        <b>Created:</b> {{ ReturnRequest.CreateDate }}
-    </div>
-    <div class="col-sm-3">
-        <b>Altered:</b> {{ ReturnRequest.AlterDate }}
-    </div>
-    <div class="col-sm-1"> {{ $index }} {{ $id }}</div>
-</div>
+    <tr>
+        <th>Return-Code</th>
+        <th>Created</th>
+        <th>Altered</th>
+    </tr>
+    <tr class="animate-repeat" ng-repeat="ReturnRequest in ReturnRequests | orderBy:$index:reverse track by $index">
+        <td sclass="col-sm-1" >
+            <a href="#/view/{{ ReturnRequest.id }}">
+                <b sng-click="goto('ssss')">
+                    {{ ReturnRequest.id }}
+                </b>
+            </a>
+            <div>Return Items: {{ ReturnRequest.ReturnItems.length }}</div>
+            <div><span style="font-style: italic;" ng-repeat="returnItem in ReturnRequest.ReturnItems">{{ returnItem.description }}, </span></div>
+        </td>
+        <td sclass="col-sm-3">
+            {{ ReturnRequest.CreateDate }}
+        </td>
+        <td sclass="col-sm-3">
+            <div class="left-inner-addon">
+                {{ ReturnRequest.AlterDate }}
+            </div>
+        </td>
+    </tr>
+</table>

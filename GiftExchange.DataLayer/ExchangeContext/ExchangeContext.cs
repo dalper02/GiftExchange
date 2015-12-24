@@ -27,6 +27,8 @@ namespace GiftExchange.DataLayer.ExchangeContext
 
         public DbSet<Return> Return { get; set; }
         public DbSet<ReturnItem> ReturnItem { get; set; }
+        public DbSet<ReturnOffer> ReturnOffer { get; set; }
+        public DbSet<ReturnOfferItems> ReturnOfferItems { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -39,6 +41,11 @@ namespace GiftExchange.DataLayer.ExchangeContext
                 .HasRequired(r => r.Return)
                 .WithMany(r => r.ReturnItems)
                 .HasForeignKey(r => r.ReturnId);
+
+            modelBuilder.Entity<ReturnOfferItems>()
+                .HasRequired(r => r.ReturnOffer)
+                .WithMany(r => r.ReturnOfferItems)
+                .HasForeignKey(r => r.ReturnOfferId);
         
         }
     }
